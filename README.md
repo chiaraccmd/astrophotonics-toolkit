@@ -1,6 +1,6 @@
 # 🔧 Astrophotonics & Optical Design Toolkit
 
-*A collection of MATLAB and Zemax utilities for astronomical instrumentation development, featuring VPH grating optimisation, spectrograph design, and optical analysis tools.*
+*A comprehensive MATLAB toolkit for astronomical instrumentation development, featuring spectrograph design, fibre optics analysis, and optical performance modelling. Developed for integral field spectrograph design and optimization.*
 
 ---
 
@@ -9,26 +9,44 @@
 ### MATLAB Examples
 
 ```matlab
-% VPH grating efficiency calculation
-[efficiency, params] = kogelnik_efficiency(...
-    'wavelength', 1.3e-6, 'line_density', 650, 'thickness', 20e-6);
+% Spectrograph parameter optimization
+[optimal_params, analysis_data] = spectrograph_parameter_sweep({'Y','J','H'}, ...
+    'resolving_power', [5000,5000,5000], 'name', 'MCIFU_5000_950');
 
-% Spectrograph resolving power analysis  
-[R_geo, R_diff] = spectrograph_resolving_power(...
-    'f_number', 4.55, 'slit_width', 7.3e-6, 'camera_fl', 0.272);
+% Comprehensive geometric analysis
+[performance_metrics, geometric_params] = spectrograph_geometric_analysis(...
+    'R_Y', 7880, 's1', 7.3e-6, 'nPix', 2000, 'pix', 18e-6);
 
-% Fibre crosstalk simulation
-crosstalk = fibre_crosstalk_simulator(...
+% Fibre crosstalk analysis
+[crosstalk_results, analysis_data] = fibre_crosstalk_simulator('airy', ...
     'fibre_separation', 25e-6, 'wavelength', 1.55e-6);
+
+% Diffraction limit analysis
+[transition_data, performance_metrics] = diffraction_limit_analysis(...
+    'grating_density', 650e3, 'beam_size', 14.8e-3, 'f_number', 3.57);
 ```
 
 ---
 
-## 🔭 Zemax Integration
+## 🌍 Current Capabilities
 
-* Use provided merit functions for spectroscopic systems
-* Multi-configuration editors for grating analysis
-* Glass substitution templates for material optimisation
+### ✅ Implemented & Ready
+
+#### Optical System Analysis
+
+* **spectrograph_parameter_sweep.m** — Multi-band parameter optimization and cross-band matching
+* **spectrograph_geometric_analysis.m** — Comprehensive geometric and diffraction analysis
+* **diffraction_limit_analysis.m** — Performance transition analysis (geometric vs diffraction-limited)
+
+#### Fibre Optics & IFS
+
+* **fibre_crosstalk_simulator.m** — Multi-model crosstalk analysis (Airy, Gaussian, dispersed spectra)
+
+### 🔄 To Be Developed
+
+* VPH Grating Design (awaiting permissions)
+* Zemax Integration (see next steps below)
+* Data Processing Utilities
 
 ---
 
@@ -37,75 +55,75 @@ crosstalk = fibre_crosstalk_simulator(...
 ```
 Astrophotonics-Toolkit/
 ├── 📊 MATLAB/
-│   ├── VPHG_Design/           # Volume Phase Holographic Grating tools
-│   ├── Optical_Geometry/      # Spectrograph layout & analysis
-│   ├── Fibre_Optics/          # Fibre bundle & crosstalk analysis
-│   └── Data_Processing/       # IFS data handling utilities
-├── 🔍 Zemax_Templates/
-│   ├── Merit_Functions/       # Optimisation operands
-│   └── Template_Files/        # Quick-start optical designs
+│   ├── Optical_Geometry/           # Spectrograph layout & analysis
+│   │   ├── spectrograph_parameter_sweep.m
+│   │   ├── spectrograph_geometric_analysis.m  
+│   │   └── diffraction_limit_analysis.m
+│   ├── Fibre_Optics/               # Fibre bundle & crosstalk analysis
+│   │   └── fibre_crosstalk_simulator.m
+│   ├── VPHG_Design/                # Volume Phase Holographic Grating tools
+│   │   └── (to be added)
+│   └── Data_Processing/            # IFS data handling utilities
+│       └── (to be added)
+├── 🔍 Zemax_Templates/             # Optical design templates
+│   ├── Merit_Functions/            # Optimization operands
+│   └── Template_Files/             # Quick-start optical designs
 ├── 📚 Documentation/
 │   ├── Getting_Started.md
 │   ├── Theory_Background.md
 │   └── API_Reference.md
 └── 🧪 Examples/
-    ├── VPHG_Optimization_Example/
+    ├── Spectrograph_Design_Example/
     ├── Crosstalk_Analysis_Example/
     └── Resolving_Power_Tradeoff/
 ```
 
 ---
 
-## 🛠️ Tool Categories
-
-### VPH Grating Design
-
-* `kogelnik_efficiency.m` — VPH grating efficiency calculations
-* `vphg_parameter_sweep.m` — *d*, Δ*n*, φ optimisation
-* `multiplexed_efficiency.m` — Stacked grating analysis
-* `bragg_condition_solver.m` — Optimal incidence angles
+## 🧰 Tool Categories
 
 ### Optical System Analysis
 
-* `spectrograph_resolving_power.m` — Resolving power vs wavelength calculator
-* `diffraction_limit_analysis.m` — Airy disk & sampling analysis
-* `anamorphic_magnification.m` — Beam compression calculations
-* `spot_size_evolution.m` — PSF wavelength dependence
+* **spectrograph_parameter_sweep.m** — Multi-band parameter optimization and cross-band consistency
+* **spectrograph_geometric_analysis.m** — Comprehensive performance analysis with detector coverage verification
+* **diffraction_limit_analysis.m** — Geometric vs diffraction-limited performance transition analysis
 
 ### Fibre Optics & IFS
 
-* `fibre_crosstalk_simulator.m` — PSF overlap analysis
-* `datacube_reconstruction.m` — IFS data processing
-* `wavelength_calibration.m` — Spectral calibration tools
-* `snr_estimator.m` — Signal-to-noise calculations
+* **fibre_crosstalk_simulator.m** — Multi-model PSF analysis (Airy, Gaussian, dispersed spectra) with pixel integration
 
-### Zemax Automation
+### VPH Grating Design *(Planned)*
 
-* `ifs_spectrograph_optimization.MF` — Merit functions
-* `multi_config_analysis.zpl` — Multi-grating analysis
-* `glass_substitution_tool.zpl` — Material optimisation
-* `footprint_diagram_export.zpl` — Batch detector analysis
+* **kogelnik_efficiency.m** — VPH grating efficiency calculations
+* **vphg_parameter_sweep.m** — *d*, Δ*n*, φ optimisation
+* **bragg_condition_solver.m** — Optimal incidence angles
+
+### Zemax Automation *(Planned)*
+
+* **ifs_spectrograph_optimization.MF** — Merit functions for spectroscopic systems
+* **multi_config_analysis.zpl** — Multi-grating analysis
+* **glass_substitution_tool.zpl** — Material optimisation
 
 ---
 
 ## 📋 Example Workflows
 
-### 1. VPH Grating Design
+### 1. Spectrograph Design & Optimization
 
 ```
-Parameter sweep → Efficiency optimisation → Multiplexing analysis → Manufacturing specs
+Requirements → Parameter sweep → Geometric design → Diffraction analysis → Performance validation
 ```
 
-### 2. Spectrograph Layout
-
-```
-Requirements → Geometric design → Diffraction analysis → Sampling verification
-```
-
-### 3. Fibre System Analysis
+### 2. Fibre System Analysis
 
 ```
 Bundle geometry → Crosstalk simulation → Detector layout → Performance validation
+```
+
+### 3. System Performance Budget
+
+```
+Geometric resolving power → Diffraction limit → Transition wavelength → Optimization
 ```
 
 ---
@@ -113,46 +131,56 @@ Bundle geometry → Crosstalk simulation → Detector layout → Performance val
 ## 🎯 Applications
 
 * Astronomical spectrograph design
-* Volume Phase Holographic Grating optimisation
-* Integral Field Spectroscopy systems
+* Integral Field Spectroscopy (IFS) systems
 * Fibre-fed instrument development
-* Optical performance modelling
+* Optical performance modelling and tolerancing
+* Cross-dispersed spectrometer design
 
 ---
 
 ## 📖 Documentation
 
 * **Getting Started** — Installation and basic usage
-* **Theory Background** — Optical design principles
-* **API Reference** — Complete function documentation
+* **Theory Background** — Optical design principles and physical foundations
+* **API Reference** — Complete function documentation with examples
 
 ---
 
 ## 🔬 Theory Background
 
-Tools are based on:
+Tools are based on established physical principles:
 
-* *Kogelnik’s coupled-wave theory* (VPHG efficiency)
-* *Fourier optics* (diffraction analysis)
-* *Geometrical optics* (spectrograph design)
-* *Statistical optics* (crosstalk modelling)
+* **Geometrical optics** — Spectrograph layout and resolving power
+* **Fourier optics** — Diffraction analysis and PSF modelling
+* **Statistical optics** — Fibre crosstalk and signal analysis
+* **Grating theory** — Dispersion and resolution limits
 
 ---
 
 ## 📝 License & Citation
 
-This toolkit is available for academic use.
-If used in research, please cite:
+This toolkit is available for academic and research use.
+If used in publications, please cite:
 
 ```bibtex
-% Your thesis citation would go here
+% Your thesis/dissertation citation
+@mastersthesis{author2024spectrograph,
+  title={Development of an Integral Field Spectrograph for Exoplanet Science},
+  author={Your Name},
+  year={2024},
+  school={Politecnico di Milano}
+}
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Feel free to submit issues and enhancement requests for additional tools or improved functionality!
+We welcome contributions and enhancements! Please feel free to:
 
-> Tools developed during MSc thesis work on *“Development of an Integral Field Spectrograph for Exoplanet Science”* at **Politecnico di Milano** and **INAF - Osservatorio Astronomico di Brera**.
+* Submit issues for bugs or feature requests
+* Suggest additional tools or improvements
+* Share your own spectrograph design utilities
+
+*Tools developed during MSc thesis work on "Development of an Integral Field Spectrograph for Exoplanet Science" at Politecnico di Milano and INAF - Osservatorio Astronomico di Brera.*
 
