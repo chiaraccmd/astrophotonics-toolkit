@@ -74,15 +74,15 @@ astrophotonics-toolkit/
 
 ## 🔄 Planned Extensions
 
-* **VPH Grating Design** — Efficiency calculations and Bragg condition optimization
-* **Data Processing Utilities** — IFS datacube handling and spectral extraction
-* **Additional Zemax Templates** — Multi-configuration analysis and tolerance tools
+* **VPH Grating Design** — Efficiency calculations and Bragg condition optimization.
+* **Data Processing Utilities** — IFS datacube handling and spectral extraction.
+* **Additional Zemax Templates** — Multi-configuration analysis and tolerance tools.
 
 ---
 
 ## 📋 Example Workflows
 
-### 1. Spectrograph Design & optimization
+### 1. Spectrograph Design & Optimization
 
 **Workflow:** Requirements → Parameter sweep → Geometric design → Diffraction analysis → Performance validation
 
