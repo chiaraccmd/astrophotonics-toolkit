@@ -31,14 +31,6 @@ function [optimal_params, analysis_data] = spectrograph_parameter_sweep(band_sel
 %   % Custom design with specific resolving power
 %   [opt_params, data] = spectrograph_parameter_sweep({'Y','J'}, ...
 %       'resolving_power', [6000, 6000], 'name', 'HighRes_Design');
-%
-% References:
-%   [1] Schroeder, "Astronomical Optics", Academic Press, 2000
-%   [2] McLean, "Electronic Imaging in Astronomy", Wiley, 2008
-%
-% Author: Chiara D'Amato
-% Affiliation: Politecnico di Milano / INAF - Osservatorio Astronomico di Brera
-% Project: Astrophotonics Toolkit
 
 %% Input parsing and parameter setup
 % =========================================================================
