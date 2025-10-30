@@ -69,7 +69,7 @@ astrophotonics-toolkit/
 
 ---
 
-## 📋 Planned Extensions
+## 🔄 Planned Extensions
 
 * **VPH Grating Design** — Efficiency calculations and Bragg condition optimisation
 * **Data Processing Utilities** — IFS datacube handling and spectral extraction
