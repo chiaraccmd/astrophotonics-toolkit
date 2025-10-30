@@ -53,25 +53,27 @@ astrophotonics-toolkit/
 
 ## 🧰 Tool Categories
 
-### ✅ Optical System Analysis (Implemented)
+### ✅ Optical System Analysis
 
-* **spectrograph_parameter_sweep.m** — Multi-band parameter optimisation with cross-band consistency analysis. Supports Y, J, H bands with automatic grating density matching.
+* **spectrograph_parameter_sweep.m** — Multi-band parameter optimization with cross-band consistency analysis. Supports Y, J, H bands with automatic grating density matching.
 * **spectrograph_geometric_analysis.m** — Comprehensive performance analysis including resolving power vs wavelength, detector coverage verification, and fibre crosstalk assessment.
 * **diffraction_limit_analysis.m** — Identifies performance transition between geometric and diffraction-limited regimes with parameter sensitivity analysis.
 
-### ✅ Fibre Optics & IFS (Implemented)
+### ✅ Fibre Optics & IFS
 
 * **fibre_crosstalk_simulator.m** — Multi-model PSF analysis supporting Airy disk, Gaussian beam, and dispersed spectrum models with pixel integration for detector effects.
 
-### ✅ Zemax Integration (Implemented)
+### ✅ Zemax Integration
 
-* **spectrograph_optimization.MF** — Merit function template for spectroscopic system optimisation in Zemax.
+* **collimator_optimization.MF** — Merit function template for collimator optimization in Zemax.
+* **spectrograph_optimization.MF** — Merit function template for spectroscopic system optimization in Zemax.
+* **glass_substitution_tool.zpl** — ZPL macro for automated material optimization in spectrograph designs.
 
 ---
 
 ## 🔄 Planned Extensions
 
-* **VPH Grating Design** — Efficiency calculations and Bragg condition optimisation
+* **VPH Grating Design** — Efficiency calculations and Bragg condition optimization
 * **Data Processing Utilities** — IFS datacube handling and spectral extraction
 * **Additional Zemax Templates** — Multi-configuration analysis and tolerance tools
 
@@ -79,7 +81,7 @@ astrophotonics-toolkit/
 
 ## 📋 Example Workflows
 
-### 1. Spectrograph Design & Optimisation
+### 1. Spectrograph Design & optimization
 
 **Workflow:** Requirements → Parameter sweep → Geometric design → Diffraction analysis → Performance validation
 
@@ -101,17 +103,17 @@ astrophotonics-toolkit/
 
 ### 3. Zemax–MATLAB Co-Design
 
-**Workflow:** MATLAB system sizing → Zemax optimisation → Performance validation → Parameter refinement
+**Workflow:** MATLAB system sizing → Zemax optimization → Performance validation → Parameter refinement
 
 ---
 
 ## 🎯 Applications
 
 * Astronomical spectrograph design — From conceptual sizing to detailed performance analysis
-* Integral Field Spectroscopy (IFS) systems — Fibre-fed spectrograph optimisation
+* Integral Field Spectroscopy (IFS) systems — Fibre-fed spectrograph optimization
 * Cross-dispersed spectrometer design — Multi-band performance balancing
 * Optical performance modelling — Geometric vs diffraction-limited performance budgeting
-* Fibre-fed instrument development — Crosstalk analysis and bundle optimisation
+* Fibre-fed instrument development — Crosstalk analysis and bundle optimization
 
 ---
 
