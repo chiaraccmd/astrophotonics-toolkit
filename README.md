@@ -129,7 +129,7 @@ Tools are based on established physical principles:
 
 ---
 
-## 📝 License & Citation
+## 📝 License
 
 This toolkit is available under the **MIT License** for academic and research use.
 
