@@ -101,7 +101,7 @@ fprintf('\n=== Analysis Complete ===\n');
 
 end
 
-%% Airy PSF Crosstalk Analysis - FIXED VERSION
+%% Airy PSF Crosstalk Analysis
 % =========================================================================
 function [results, data] = airy_crosstalk_analysis(params)
 % AIRY_CROSSTALK_ANALYSIS - Diffraction-limited crosstalk using Airy disk model
@@ -110,7 +110,7 @@ function [results, data] = airy_crosstalk_analysis(params)
     
     %% Continuous PSF Analysis
     % =====================================================================
-    % FIXED: Consistent Airy PSF function definition
+    % Airy PSF function definition
     airy_psf_continuous = @(r, r0) (2 * besselj(1, 1.22 * pi * r / r0) ./ (1.22 * pi * r / r0)).^2;
     
     % Grid setup for continuous analysis
@@ -141,11 +141,11 @@ function [results, data] = airy_crosstalk_analysis(params)
         crosstalk_continuous(k) = sum(I_continuous(shifted_mask));
     end
     
-    %% Pixel-Integrated Analysis - FIXED FUNCTION HANDLE
+    %% Pixel-Integrated Analysis
     % =====================================================================
     fprintf('Performing pixel-integrated analysis...\n');
     
-    % FIXED: Create proper function handle for pixel integration
+    % Create function handle for pixel integration
     airy_psf_pixel = @(r) (2 * besselj(1, pi * r) ./ (pi * r)).^2;
     airy_psf_pixel(0); % Initialize function handle
     
@@ -260,7 +260,7 @@ function [results, data] = dispersed_crosstalk_analysis(params)
 
     fprintf('\n--- Dispersed Spectrum Crosstalk Analysis ---\n');
     
-    % Airy PSF function - FIXED: Consistent single-argument definition
+    % Airy PSF function
     airy_psf = @(r) (2 * besselj(1, pi * r) ./ (pi * r)).^2;
     
     %% Spectral Dispersion Calculation
@@ -357,7 +357,7 @@ function [results, data] = dispersed_crosstalk_analysis(params)
     data.parameters = params;
 end
 
-%% Pixel Integration Core Function - FIXED VERSION
+%% Pixel Integration Core Function
 % =========================================================================
 function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_analysis(params, psf_function, model_type, r0)
 % PIXEL_INTEGRATED_ANALYSIS - Account for detector pixelation effects
@@ -370,10 +370,10 @@ function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_analysi
     x_subsampled = linspace(-fov/2, fov/2, N_subsampled);
     [X_subs, Y_subs] = meshgrid(x_subsampled, x_subsampled);
     
-    %% PSF Generation on Subsampled Grid - FIXED: Consistent function calls
+    %% PSF Generation on Subsampled Grid
     switch model_type
         case 'airy'
-            % FIXED: Use normalized radial coordinate for Airy PSF
+            % Use normalized radial coordinate for Airy PSF
             R_subs = sqrt((X_subs/params.anamorphism).^2 + Y_subs.^2) / r0;
             I_subsampled = psf_function(R_subs);
             
@@ -410,7 +410,7 @@ function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_analysi
     x_pixel = linspace(-fov/2, fov/2, params.fov_pixels);
     y_pixel = x_pixel;
     
-    %% Crosstalk Calculation - FIXED: Use proper Airy radius
+    %% Crosstalk Calculation
     d_steps = linspace(0, 30e-6, 30);
     d_detector = d_steps * params.M;
     crosstalk_pixel = zeros(size(d_detector));
@@ -424,13 +424,13 @@ function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_analysi
     end
 end
 
-%% Dispersed Pixel Integration - FIXED VERSION
+%% Dispersed Pixel Integration
 % =========================================================================
 function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_dispersed_analysis(...
     params, lambda_samples, y_pos, r0_values)
 % PIXEL_INTEGRATED_DISPERSED_ANALYSIS - Pixel integration for dispersed spectra
 
-    % FIXED: Consistent Airy PSF definition
+    % Airy PSF definition
     airy_psf = @(r) (2 * besselj(1, pi * r) ./ (pi * r)).^2;
     
     fov = params.fov_pixels * params.pixel_size;
@@ -492,7 +492,7 @@ function [crosstalk_pixel, I_pixel, x_pixel, y_pixel] = pixel_integrated_dispers
     end
 end
 
-%% Visualization Functions - COMPLETE VERSION
+%% Visualization Functions
 % =========================================================================
 function fig = visualize_airy_analysis(params, I_continuous, x, crosstalk, d_steps, key_sep, crosstalk_pct, r0)
     fig = figure('Name', 'Airy PSF Crosstalk Analysis', 'Position', [100, 100, 1200, 800]);
