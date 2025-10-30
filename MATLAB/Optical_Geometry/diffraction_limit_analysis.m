@@ -30,13 +30,6 @@ function [transition_data, performance_metrics] = diffraction_limit_analysis(var
 %   % Custom design study
 %   [transition, metrics] = diffraction_limit_analysis(...
 %       'grating_density', 800e3, 'beam_size', 20e-3, 'f_number', 4.0);
-%
-% References:
-%   [1] Schroeder, "Astronomical Optics", Academic Press, 2000
-%   [2] Loewen & Popov, "Diffraction Gratings and Applications", CRC Press, 1997
-%
-% Author: Chiara D'Amato
-% Affiliation: Politecnico di Milano / INAF - Osservatorio Astronomico di Brera
 
 %% Input parsing and parameter setup
 % =========================================================================
