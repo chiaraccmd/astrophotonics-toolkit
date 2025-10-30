@@ -40,9 +40,11 @@ astrophotonics-toolkit/
 │   └── Fibre_Optics/               # Fibre bundle & crosstalk analysis
 │       └── fibre_crosstalk_simulator.m
 ├── 🔍 Zemax_Templates/             # Optical design templates
-│   └── Merit_Functions/
-│       └── collimator_optimization.MF
-│       └── spectrograph_optimization.MF
+│   ├── Merit_Functions/
+│   │   └── collimator_optimization.MF
+│   │   └── spectrograph_optimization.MF
+│   ├── Macros/
+│       └── glass_substitution_tool.zpl
 └── 🧪 Examples/
     ├── Spectrograph_Design_Example/
     ├── Crosstalk_Analysis_Example/
