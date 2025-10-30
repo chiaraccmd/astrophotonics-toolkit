@@ -27,13 +27,6 @@ function [crosstalk_results, analysis_data] = fibre_crosstalk_simulator(model_ty
 %
 %   % Complete analysis suite
 %   [results, data] = fibre_crosstalk_simulator('all', 'wavelength', 1.55e-6);
-%
-% References:
-%   [1] Goodman, "Statistical Optics", Wiley, 2015
-%   [2] Snyder & Love, "Optical Waveguide Theory", Springer, 1983
-%
-% Author: Chiara D'Amato
-% Affiliation: Politecnico di Milano / INAF - Osservatorio Astronomico di Brera
 
 %% Input parsing and parameter initialization
 % =========================================================================
