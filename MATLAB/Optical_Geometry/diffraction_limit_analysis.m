@@ -262,7 +262,7 @@ function fig = create_performance_plot(lambda, R_geom, R_diff, lambda_trans, R_t
     axis off;
 end
 
-%% Parameter Sensitivity Analysis - FIXED VERSION
+%% Parameter Sensitivity Analysis
 % =========================================================================
 function sensitivity_data = analyze_parameter_sensitivity(params, current_transition)
 % ANALYZE_PARAMETER_SENSITIVITY - Analyze how design changes affect transition
@@ -303,7 +303,7 @@ function sensitivity_data = analyze_parameter_sensitivity(params, current_transi
             end
         end
         
-        % FIXED: Calculate sensitivity without line continuation issues
+        % Calculate sensitivity
         valid_indices = ~isnan(transition_points);
         if sum(valid_indices) > 1
             valid_transitions = transition_points(valid_indices);
