@@ -22,14 +22,6 @@ function [performance_metrics, geometric_params] = spectrograph_geometric_analys
 % Example:
 %   [metrics, geometry] = spectrograph_geometric_analysis();
 %   [metrics, geometry] = spectrograph_geometric_analysis('R_Y', 9000, 'rho_Y', 700e3);
-%
-% References:
-%   [1] Schroeder, "Astronomical Optics", Academic Press, 2000
-%   [2] McLean, "Electronic Imaging in Astronomy", Wiley, 2008
-%
-% Author: Chiara D'Amato
-% Affiliation: Politecnico di Milano / INAF - Osservatorio Astronomico di Brera
-% Project: Astrophotonics Toolkit
 
 %% Input parsing and parameter initialization
 % =========================================================================
