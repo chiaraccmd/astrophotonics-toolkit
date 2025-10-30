@@ -43,12 +43,11 @@ astrophotonics-toolkit/
 │   ├── Merit_Functions/
 │   │   └── collimator_optimization.MF
 │   │   └── spectrograph_optimization.MF
-│   ├── Macros/
+│   └── Macros/
 │       └── glass_substitution_tool.zpl
 └── 🧪 Examples/
-    ├── Spectrograph_Design_Example/
-    ├── Crosstalk_Analysis_Example/
-    └── Resolving_Power_Tradeoff/
+    ├── airy_psf_example.png
+    └── spectrograph_transition_example.png
 ```
 
 ---
