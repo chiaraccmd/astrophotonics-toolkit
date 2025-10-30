@@ -1,6 +1,6 @@
 # 🔧 Astrophotonics & Optical Design Toolkit
 
-*A comprehensive MATLAB toolkit for astronomical instrumentation development, featuring spectrograph design, fibre optics analysis, and optical performance modelling. Developed for integral field spectrograph design and optimization.*
+*A toolkit for astronomical instrumentation development, featuring spectrograph design, fibre optics analysis, and optical performance modelling. Developed for integral field spectrograph design and optimization.*
 
 ---
 
@@ -28,28 +28,6 @@
 
 ---
 
-## 🌍 Current Capabilities
-
-### ✅ Implemented & Ready
-
-#### Optical System Analysis
-
-* **spectrograph_parameter_sweep.m** — Multi-band parameter optimization and cross-band matching
-* **spectrograph_geometric_analysis.m** — Comprehensive geometric and diffraction analysis
-* **diffraction_limit_analysis.m** — Performance transition analysis (geometric vs diffraction-limited)
-
-#### Fibre Optics & IFS
-
-* **fibre_crosstalk_simulator.m** — Multi-model crosstalk analysis (Airy, Gaussian, dispersed spectra)
-
-### 🔄 To Be Developed
-
-* VPH Grating Design (awaiting permissions)
-* Zemax Integration (see next steps below)
-* Data Processing Utilities
-
----
-
 ## 📁 Repository Structure
 
 ```
@@ -68,10 +46,6 @@ Astrophotonics-Toolkit/
 ├── 🔍 Zemax_Templates/             # Optical design templates
 │   ├── Merit_Functions/            # Optimization operands
 │   └── Template_Files/             # Quick-start optical designs
-├── 📚 Documentation/
-│   ├── Getting_Started.md
-│   ├── Theory_Background.md
-│   └── API_Reference.md
 └── 🧪 Examples/
     ├── Spectrograph_Design_Example/
     ├── Crosstalk_Analysis_Example/
@@ -135,14 +109,6 @@ Geometric resolving power → Diffraction limit → Transition wavelength → Op
 * Fibre-fed instrument development
 * Optical performance modelling and tolerancing
 * Cross-dispersed spectrometer design
-
----
-
-## 📖 Documentation
-
-* **Getting Started** — Installation and basic usage
-* **Theory Background** — Optical design principles and physical foundations
-* **API Reference** — Complete function documentation with examples
 
 ---
 
