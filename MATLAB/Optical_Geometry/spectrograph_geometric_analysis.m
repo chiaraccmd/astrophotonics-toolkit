@@ -44,7 +44,7 @@ addParameter(p, 'L_max_J', 1.345e-6, @isnumeric);
 addParameter(p, 'L_min_H', 1.490e-6, @isnumeric);
 addParameter(p, 'L_max_H', 1.780e-6, @isnumeric);
 
-% Grating parameters - THIS WAS MISSING!
+% Grating parameters
 addParameter(p, 'rho_Y', 650e3, @isnumeric);                % Line density band Y [lines/m]
 
 parse(p, varargin{:});
@@ -187,7 +187,7 @@ fprintf('\n=== Analysis Complete ===\n');
 
 end
 
-%% Helper Functions (remain the same as previous version)
+%% Helper Functions
 % =========================================================================
 
 function display_performance_summary(params, rho_J, rho_H, R_J, R_H, ...
